@@ -1,9 +1,9 @@
 Name: swig
 Summary: Connects C/C++/Objective C to some high-level programming languages
-Version: 1.3.40
+Version: 2.0.4
 Release: 1
 Group: Development/Tools
-License: BSD
+License: GPLv3 and BSD
 URL: http://swig.sourceforge.net
 Description: |
     SWIG is a software development tool that connects programs written in C
@@ -23,12 +23,18 @@ Sources:
 Patches:
     - swig-1.3.23-pylib.patch
 
+PkgConfigBR:
+    - libpcre
 PkgBR:
     - perl
     - python-devel
+RunFdupes:
+    - usr/share/swig/
 Configure: configure
 SubPackages:
     - Name: doc
       Summary: Documentation files for %{name}
       Group: Documentation
+      Description: |
+        %{summary}.
 
