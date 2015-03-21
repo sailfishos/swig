@@ -7,7 +7,6 @@ License:    GPLv3
 URL:        http://swig.sourceforge.net
 Source0:    http://download.sourceforge.net/swig/swig-%{version}.tar.gz
 Source1:    swig-rpmlintrc
-Source100:  swig.yaml
 BuildRequires:  pkgconfig(libpcre)
 BuildRequires:  perl
 BuildRequires:  python-devel
