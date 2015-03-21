@@ -8,7 +8,6 @@ URL:        http://swig.sourceforge.net
 Source0:    http://download.sourceforge.net/swig/swig-%{version}.tar.gz
 Source1:    swig-rpmlintrc
 Source100:  swig.yaml
-Patch0:     swig-1.3.23-pylib.patch
 BuildRequires:  pkgconfig(libpcre)
 BuildRequires:  perl
 BuildRequires:  python-devel
@@ -37,8 +36,6 @@ Requires:   %{name} = %{version}-%{release}
 
 %prep
 %setup -q
-cd swig
-%patch0 -p1
 
 %build
 cd swig
