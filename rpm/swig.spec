@@ -49,12 +49,12 @@ cd swig
 
 %files
 %defattr(-,root,root,-)
-%doc LICENSE LICENSE-GPL LICENSE-UNIVERSITIES
+%doc swig/LICENSE swig/LICENSE-GPL swig/LICENSE-UNIVERSITIES
 %{_bindir}/*
 %{_datadir}/swig
 %{_mandir}/man1/ccache-swig.1.gz
 
 %files doc
 %defattr(-,root,root,-)
-%doc ANNOUNCE CHANGES INSTALL README TODO
-%doc Doc/*
+%doc swig/ANNOUNCE swig/CHANGES swig/INSTALL swig/README swig/TODO
+%doc swig/Doc/*
