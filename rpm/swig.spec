@@ -1,6 +1,6 @@
 Name:       swig
 Summary:    Connects C/C++/Objective C to some high-level programming languages
-Version:    2.0.12
+Version:    3.0.12
 Release:    1
 Group:      Development/Tools
 License:    GPLv3
@@ -34,27 +34,18 @@ Requires:   %{name} = %{version}-%{release}
 %{summary}.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{version}/upstream
 
 %build
-cd swig
+%autogen
 %configure --disable-static
-make %{?jobs:-j%jobs}
+make %{?_smp_mflags}
 
 %install
-rm -rf %{buildroot}
-cd swig
 %make_install
 %fdupes  %{buildroot}/%{_datadir}/swig/
 
 %files
 %defattr(-,root,root,-)
-%doc swig/LICENSE swig/LICENSE-GPL swig/LICENSE-UNIVERSITIES
 %{_bindir}/*
 %{_datadir}/swig
-%{_mandir}/man1/ccache-swig.1.gz
-
-%files doc
-%defattr(-,root,root,-)
-%doc swig/ANNOUNCE swig/CHANGES swig/INSTALL swig/README swig/TODO
-%doc swig/Doc/*
