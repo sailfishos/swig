@@ -11,6 +11,7 @@ BuildRequires:  pkgconfig(libpcre)
 BuildRequires:  perl
 BuildRequires:  python-devel
 BuildRequires:  fdupes
+BuildRequires:  byacc
 
 %description
 SWIG is a software development tool that connects programs written in C
@@ -24,14 +25,6 @@ most commonly used to create high-level interpreted or compiled programming
 environments, user interfaces, and as a tool for testing and prototyping C/C++
 software. SWIG can also export its parse tree in the form of XML and Lisp
 s-expressions.
-
-%package doc
-Summary:    Documentation files for %{name}
-Group:      Documentation
-Requires:   %{name} = %{version}-%{release}
-
-%description doc
-%{summary}.
 
 %prep
 %setup -q -n %{name}-%{version}/upstream
