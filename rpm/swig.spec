@@ -9,7 +9,8 @@ Source0:    http://download.sourceforge.net/swig/swig-%{version}.tar.gz
 Source1:    swig-rpmlintrc
 BuildRequires:  pkgconfig(libpcre)
 BuildRequires:  perl
-BuildRequires:  python-devel
+BuildRequires:  automake
+BuildRequires:  python3-devel
 BuildRequires:  fdupes
 BuildRequires:  byacc
 
