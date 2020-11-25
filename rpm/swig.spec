@@ -1,14 +1,15 @@
 Name:       swig
 Summary:    Connects C/C++/Objective C to some high-level programming languages
-Version:    4.0.1
+Version:    4.2.1
 Release:    1
 License:    GPLv3
-URL:        http://swig.sourceforge.net
-Source0:    http://download.sourceforge.net/swig/swig-%{version}.tar.gz
+URL:        https://github.com/sailfishos/swig
+Source0:    swig-%{version}.tar.gz
 Source1:    swig-rpmlintrc
-BuildRequires:  pkgconfig(libpcre)
+BuildRequires:  pkgconfig(libpcre2-8)
 BuildRequires:  perl
 BuildRequires:  automake
+BuildRequires:  bison
 BuildRequires:  python3-devel
 BuildRequires:  fdupes
 BuildRequires:  byacc
@@ -27,18 +28,17 @@ software. SWIG can also export its parse tree in the form of XML and Lisp
 s-expressions.
 
 %prep
-%setup -q -n %{name}-%{version}/upstream
+%autosetup -n %{name}-%{version}/upstream
 
 %build
 %autogen
 %configure --disable-static
-make %{?_smp_mflags}
+%make_build
 
 %install
 %make_install
 %fdupes  %{buildroot}/%{_datadir}/swig/
 
 %files
-%defattr(-,root,root,-)
 %{_bindir}/*
 %{_datadir}/swig
