@@ -12,6 +12,7 @@ BuildRequires:  automake
 BuildRequires:  python3-devel
 BuildRequires:  fdupes
 BuildRequires:  byacc
+BuildRequires:  libstdc++-devel
 
 %description
 SWIG is a software development tool that connects programs written in C
